@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="创建命令创建模型：php artisan make:model Test创建控制器：php artisan make:controller TestController创建资源控制器：php artisan make:controller TestController –resource创建资源控制器附带模型php artisan make:controller TestController –r">
+<meta name="description" content="创建命令创建模型：php artisan make:model Test创建控制器：php artisan make:controller TestController创建资源控制器：php artisan make:controller TestController –resource创建资源控制器附带模型php artisan make:controller TestController –">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Laravel 5 常用命令">
 <meta property="og:url" content="https://gsangu.github.io/2017/08/05/laravel-5-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4/index.html">
 <meta property="og:site_name" content="笔记">
-<meta property="og:description" content="创建命令创建模型：php artisan make:model Test创建控制器：php artisan make:controller TestController创建资源控制器：php artisan make:controller TestController –resource创建资源控制器附带模型php artisan make:controller TestController –r">
+<meta property="og:description" content="创建命令创建模型：php artisan make:model Test创建控制器：php artisan make:controller TestController创建资源控制器：php artisan make:controller TestController –resource创建资源控制器附带模型php artisan make:controller TestController –">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-09T06:39:27.653Z">
+<meta property="og:updated_time" content="2017-09-09T06:47:02.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Laravel 5 常用命令">
-<meta name="twitter:description" content="创建命令创建模型：php artisan make:model Test创建控制器：php artisan make:controller TestController创建资源控制器：php artisan make:controller TestController –resource创建资源控制器附带模型php artisan make:controller TestController –r">
+<meta name="twitter:description" content="创建命令创建模型：php artisan make:model Test创建控制器：php artisan make:controller TestController创建资源控制器：php artisan make:controller TestController –resource创建资源控制器附带模型php artisan make:controller TestController –">
 
 
 
@@ -347,7 +347,8 @@
       
 
       
-        <table style="width:100%;height:600px;"><br><tr><br><td colspan="2">创建命令</td><br></tr><br><tr><br><td>创建模型：</td><br><td>php artisan make:model Test</td><br></tr><br><tr><br><td>创建控制器：</td><br><td>php artisan make:controller TestController</td><br></tr><br><tr><br><td>创建资源控制器：</td><br><td>php artisan make:controller TestController –resource</td><br></tr><br><tr><br><td>创建资源控制器附带模型</td><br><td>php artisan make:controller TestController –resource –model=Test</td><br></tr><br><td>创建表单验证类</td><br><td>php artisan make:request StoreBlogPost（验证名称）</td><br><br><tr><br><td>创建数据库迁移</td><br><td>php artisan make:migration create_users_table</td><br></tr><br><tr><br><td>路由清理缓存</td><br><td>php artisan route:clear</td><br></tr><br><br><tr><br><td colspan="2">其他</td><br></tr><br><tr><br><td>查看所有路由</td><br><td>php artisan route:list</td><br></tr><br><tr><br><td>路由缓存</td><br><td>php artisan route:cache</td><br></tr><br><tr><br><td>路由清理缓存</td><br><td>php artisan route:clear</td><br></tr><br><br><tr><br><td>使用测试用服务器</td><br><td>php artisan serve (–port=端口)</td><br></tr><br><br><tr><br><td colspan="2">数据填充：<a href="https://github.com/fzaninotto/Faker" target="_blank" rel="external">faker</a></td><br></tr><br><tr><br><td>进入调试</td><br><td>php artisan tinker</td><br></tr><br><tr><br><td>数据创建</td><br><td>factory(Model::class,10)-&gt;make()</td><br></tr><br><tr><br><td>数据填充</td><br><td>factory(Model::class,10)-&gt;create()</td><br></tr><br><br></table>
+        <a id="more"></a>
+<table style="width:100%;height:600px;"><br><tr><br><td colspan="2">创建命令</td><br></tr><br><tr><br><td>创建模型：</td><br><td>php artisan make:model Test</td><br></tr><br><tr><br><td>创建控制器：</td><br><td>php artisan make:controller TestController</td><br></tr><br><tr><br><td>创建资源控制器：</td><br><td>php artisan make:controller TestController –resource</td><br></tr><br><tr><br><td>创建资源控制器附带模型</td><br><td>php artisan make:controller TestController –resource –model=Test</td><br></tr><br><td>创建表单验证类</td><br><td>php artisan make:request StoreBlogPost（验证名称）</td><br><br><tr><br><td>创建数据库迁移</td><br><td>php artisan make:migration create_users_table</td><br></tr><br><tr><br><td>路由清理缓存</td><br><td>php artisan route:clear</td><br></tr><br><br><tr><br><td colspan="2">其他</td><br></tr><br><tr><br><td>查看所有路由</td><br><td>php artisan route:list</td><br></tr><br><tr><br><td>路由缓存</td><br><td>php artisan route:cache</td><br></tr><br><tr><br><td>路由清理缓存</td><br><td>php artisan route:clear</td><br></tr><br><br><tr><br><td>使用测试用服务器</td><br><td>php artisan serve (–port=端口)</td><br></tr><br><br><tr><br><td colspan="2">数据填充：<a href="https://github.com/fzaninotto/Faker" target="_blank" rel="external">faker</a></td><br></tr><br><tr><br><td>进入调试</td><br><td>php artisan tinker</td><br></tr><br><tr><br><td>数据创建</td><br><td>factory(Model::class,10)-&gt;make()</td><br></tr><br><tr><br><td>数据填充</td><br><td>factory(Model::class,10)-&gt;create()</td><br></tr><br><br></table>
 
 
       
