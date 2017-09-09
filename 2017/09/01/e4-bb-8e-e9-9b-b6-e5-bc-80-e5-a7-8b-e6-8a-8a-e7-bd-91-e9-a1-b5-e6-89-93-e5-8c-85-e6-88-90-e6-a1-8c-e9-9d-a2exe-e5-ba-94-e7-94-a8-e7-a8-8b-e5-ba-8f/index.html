@@ -333,6 +333,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/01/e4-bb-8e-e9-9b-b6-e5-bc-80-e5-a7-8b-e6-8a-8a-e7-bd-91-e9-a1-b5-e6-89-93-e5-8c-85-e6-88-90-e6-a1-8c-e9-9d-a2exe-e5-ba-94-e7-94-a8-e7-a8-8b-e5-ba-8f/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/01/e4-bb-8e-e9-9b-b6-e5-bc-80-e5-a7-8b-e6-8a-8a-e7-bd-91-e9-a1-b5-e6-89-93-e5-8c-85-e6-88-90-e6-a1-8c-e9-9d-a2exe-e5-ba-94-e7-94-a8-e7-a8-8b-e5-ba-8f/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -505,6 +516,13 @@ app.on('activate', () => {
           
   <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
   </div>
 
 
@@ -561,10 +579,10 @@ app.on('activate', () => {
             
             
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -572,10 +590,10 @@ app.on('activate', () => {
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
@@ -585,12 +603,34 @@ app.on('activate', () => {
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gsangu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-globe"></i>GitHub</a>
+              </span>
+            
+          
         </div>
 
         
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://gsanweb.cn/" title="主站" target="_blank">主站</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
         
@@ -751,6 +791,26 @@ app.on('activate', () => {
 
   
 
+    
+      <script id="dsq-count-scr" src="https://Gsan.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://gsangu.github.io/2017/09/01/e4-bb-8e-e9-9b-b6-e5-bc-80-e5-a7-8b-e6-8a-8a-e7-bd-91-e9-a1-b5-e6-89-93-e5-8c-85-e6-88-90-e6-a1-8c-e9-9d-a2exe-e5-ba-94-e7-94-a8-e7-a8-8b-e5-ba-8f/';
+          this.page.identifier = '2017/09/01/e4-bb-8e-e9-9b-b6-e5-bc-80-e5-a7-8b-e6-8a-8a-e7-bd-91-e9-a1-b5-e6-89-93-e5-8c-85-e6-88-90-e6-a1-8c-e9-9d-a2exe-e5-ba-94-e7-94-a8-e7-a8-8b-e5-ba-8f/';
+          this.page.title = '从零开始把网页打包成桌面EXE应用程序';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Gsan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -763,10 +823,6 @@ app.on('activate', () => {
   
 
 
-
-
-
-  
 
 
 
