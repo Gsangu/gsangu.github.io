@@ -255,358 +255,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gsangu.github.io/2017/06/20/html-e7-89-b9-e6-ae-8a-e5-ad-97-e7-ac-a6-e7-bc-96-e7-a0-81css3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笔记">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/20/html-e7-89-b9-e6-ae-8a-e5-ad-97-e7-ac-a6-e7-bc-96-e7-a0-81css3/" itemprop="url">html特殊字符 编码css3</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T19:57:26+08:00">
-                2017-06-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>项目中用到的一些特殊字符和图标</p>
-<p>html代码</p>
-<p><span style="background-color: #999999;">&lt;div class=”cross”&gt;&lt;/div&gt;</span></p>
-<p>css代码<br>.cross{<br>width: 20px;<br>height: 20px;<br>background-color: #F3F9FF;<br>border-radius: 10px;<br>border: 1px solid #DBE6EF;<br>display: inline-block;<br>position: relative;<br>bottom: 20px;<br>right: 15px;<br>}<br>.cross:after{<br>content: “\2715”;//特殊字符或形状<br>color: #a2b6c5;<br>font-size: 12px;<br>position: relative;<br>left: 4px;<br>bottom: 3px;<br>cursor: pointer;<br>}<br>效果就是一个圆圈里面带个叉叉</p>
-<p>特殊字符和形状可以省去很多事情，整理了一下网上的，留着以后用</p>
-<p>基本形状<br>▲ 9650 25B2 ► 9658 25BA ► 9658 25BA ▼ 9660 25BC<br>◄ 9668 25C4 ❤ 10084 2764 ✈ 9992 2708 ★ 9733 2605<br>✦ 10022 2726 ☀ 9728 2600 ◆ 9670 25C6 ◈ 9672 25C8<br>▣ 9635 25A3</p>
-<p>标点,特殊符号</p>
-<p>« 171 00AB » 187 00BB ‹ 139 008B › 155 009B “ 8220 201C ” 8221 201D<br>‘ 8216 2018 ’ 8217 2019 • 8226 2022 ◦ 9702 25E6 ¡ 161 00A1 ¿ 191 00BF<br>℅ 8453 2105 № 8470 2116 &amp; 38 0026 @ 64 0040 ℞ 8478 211E ℃ 8451 2103<br>℉ 8457 2109 ° 176 00B0 | 124 007C ¦ 166 00A6 – 8211 2013 — 8212 2014<br>… 8230 2026 ¶ 182 00B6 ∼ 8764 223C ≠ 8800 2260</p>
-<p>法律符号</p>
-<p>® 174 00AE © 169 00A9 ℗ 8471 2117 ™ 153 0099 ℠ 8480 2120</p>
-<p>各种箭头</p>
-<p>⇠ 8672 21E0<br>⇢ 8674 21E2<br>⇡ 8673 21E1<br>⇣ 8675 21E3<br>↞ 8606 219E<br>↠ 8608 21A0<br>↟ 8607 219F<br>↡ 8609 21A1<br>← 8592 2190<br>→ 8594 2192<br>↑ 8593 2191<br>↓ 8595 2193<br>↔ 8596 2194<br>↕ 8597 2195<br>⇄ 8644 21C4<br>⇅ 8645 21C5<br>↢ 8610 21A2<br>↣ 8611 21A3<br>⇞ 8670 21DE<br>⇟ 8671 21DF<br>↫ 8619 21AB<br>↬ 8620 21AC<br>⇜ 8668 21DC<br>⇝ 8669 21DD<br>↚ 8602 219A<br>↛ 8603 219B<br>↮ 8622 21AE<br>↭ 8621 21AD</p>
-<p>形状</p>
-<p>⇦ 8678 21E6<br>⇨ 8680 21E8<br>⇧ 8679 21E7<br>⇩ 8681 21E9<br>↷ 8631 21B7<br>↶ 8630 21B6<br>↻ 8635 21BB<br>↺ 8634 21BA<br>⟳ 10227 27F3<br>⟲ 10226 27F2<br>⟰ 10224 27F0<br>⟱ 10225 27F1<br>↵ 8629 21B5<br>↯ 8623 21AF<br>⇵ 8693 21F5</p>
-<p>向右的箭头</p>
-<p>➔ 10132 2794<br>➙ 10137 2799<br>➨ 10152 27A8<br>➲ 10162 27B2<br>➜ 10140 279C<br>➞ 10142 279E<br>➟ 10143 279F<br>➠ 10144 27A0<br>➤ 10148 27A4<br>➥ 10149 27A5<br>➦ 10150 27A6<br>➧ 10151 27A7<br>➵ 10165 27B5<br>➸ 10168 27B8<br>➼ 10172 27BC<br>➽ 10173 27BD<br>➺ 10170 27BA<br>➳ 10163 27B3<br>➾ 10174 27BE</p>
-<p>货币</p>
-<p>$ 36 0024<br>¢ 162 00A2<br>£ 163 00A3<br>¤ 164 00A4<br>€ 8364 20AC<br>¥ 165 00A5<br>₱ 8369 20B1<br>₹ 8377 20B9</p>
-<p>数学</p>
-<p>½ 189 00BD<br>¼ 188 00BC<br>¾ 190 00BE<br>⅓ 8531 2153<br>⅔ 8532 2154<br>⅛ 8539 215B<br>⅜ 8540 215C<br>⅝ 8541 215D<br>‰ 8240 2030<br>% 37 0025<br>&lt; 60 003C &gt; 62 003E</p>
-<p>音乐符号</p>
-<p>♩ 9833 2669<br>♪ 9834 266A<br>♫ 9835 266B<br>♬ 9836 266C<br>♭ 9837 266D<br>♯ 9839 266F</p>
-<p>对号、错号<br>00A0<br>☐ 9744 2610<br>☑ 9745 2611<br>☒ 9746 2612<br>✓ 10003 2713<br>✔ 10004 2714<br>✕ 10005 2715<br>✖ 10006 2716<br>✗ 10007 2717<br>✘ 10008 2718</p>
-<p>十字</p>
-<p>☨ 9768 2628<br>☩ 9769 2629<br>✝ 10013 271D<br>✞ 10014 271E<br>✟ 10015 271F<br>✠ 10016 2720<br>✚ 10010 271A<br>† 8224 2020<br>✢ 10018 2722<br>✤ 10020 2724<br>✣ 10019 2723<br>✥ 10021 2725</p>
-<p>星星、星号、雪花</p>
-<p>★ 9733 2605<br>✭ 10029 272D<br>✮ 10030 272E<br>☆ 9734 2606<br>✪ 10026 272A<br>✡ 10017 2721<br>✯ 10031 272F<br>✵ 10037 2735<br>✶ 10038 2736<br>✸ 10040 2738<br>✹ 10041 2739<br>✺ 10042 273A<br>✱ 10033 2731<br>✲ 10034 2732<br>✴ 10036 2734<br>✳ 10035 2733<br>✻ 10043 273B<br>✽ 10045 273D<br>❋ 10059 274B<br>❆ 10054 2746<br>❄ 10052 2744<br>❅ 10053 2745</p>
-<p>杂项</p>
-<p>☻ 9787 263B<br>☺ 9786 263A<br>☹ 9785 2639<br>✉ 9993 2709<br>☎ 9742 260E<br>☏ 9743 260F<br>✆ 9990 2706<br>� 65533 FFFD<br>☁ 9729 2601<br>☂ 9730 2602<br>❄ 10052 2744<br>☃ 9731 2603<br>❈ 10056 2748<br>✿ 10047 273F<br>❀ 10048 2740<br>❁ 10049 2741<br>☘ 9752 2618<br>❦ 10086 2766<br>☕ 9749 9749<br>❂ 10050 2742<br>☥ 9765 2625<br>☮ 9774 262E<br>☯ 9775 262F<br>☪ 9770 262A<br>☤ 9764 2624<br>✄ 9988 2704<br>✂ 9986 2702<br>☸ 9784 2638<br>⚓ 9875 2693<br>☣ 9763 2623<br>⚠ 9888 26A0<br>⚡ 9889 26A1<br>☢ 9762 2622<br>♻ 9851 267B<br>♿ 9855 267F<br>☠ 9760 2620</p>
-<p>手型、铅笔、笔</p>
-<p>☜ 9756 261C<br>☞ 9758 261E<br>☝ 9757 261D<br>☟ 9759 261F<br>✌ 9996 270C<br>✍ 9997 270D<br>✎ 9998 270E<br>✐ 10000 2710<br>✏ 9999 270F<br>✑ 10001 2711<br>✒ 10002 2712</p>
-<p>天空、植物</p>
-<p>☽ 9789 263D<br>☾ 9790 263E<br>♂ 9794 2642<br>♀ 9792 2640<br>☿ 9791 263F<br>♁ 9793 2641<br>♃ 9795 2643<br>♄ 9796 2644<br>♅ 9797 2645<br>♆ 9798 2646<br>♇ 9799 2647</p>
-<p>星座</p>
-<p>♈ 9800 2648<br>♉ 9801 2649<br>♊ 9802 264A<br>♋ 9803 264B<br>♌ 9804 264C<br>♍ 9805 264D<br>♎ 9806 264E<br>♏ 9807 264F<br>♑ 9809 2651<br>♒ 9810 2652<br>♓ 9811 2653</p>
-<p>象棋，扑克牌</p>
-<p>♚ 9818 265A<br>♛ 9819 265B<br>♜ 9820 265C<br>♝ 9821 265D<br>♞ 9822 265E<br>♟ 9823 265F<br>♔ 9812 2654<br>♕ 9813 2655<br>♖ 9814 2656<br>♗ 9815 2657<br>♘ 9816 2658<br>♙ 9817 2659<br>♠ 9824 2660<br>♣ 9827 2663<br>♥ 9829 2665<br>♦ 9830 2666<br>♤ 9828 2664<br>♧ 9831 2667<br>♡ 9825 2661<br>♢ 9826 2662</p>
-<p>希腊字母</p>
-<p>Α 913 0391<br>Β 914 0392<br>Γ 915 0393<br>Δ 916 0394<br>Ε 917 0395<br>Ζ 918 0396<br>Η 919 0397<br>Θ 920 0398<br>Ι 921 0399<br>Κ 922 039A<br>Λ 923 039B<br>Μ 924 039C<br>Ν 925 039D<br>Ξ 926 039E<br>Ο 927 039F<br>Π 928 03A0<br>Ρ 929 03A1<br>Σ 931 03A3<br>Τ 932 03A4<br>Υ 933 03A5<br>Φ 934 03A6<br>Χ 935 03A7<br>Ψ 936 03A8<br>Ω 937 03A9</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gsangu.github.io/2017/06/05/e7-be-8e-e5-8c-96-e4-b8-8a-e4-bc-a0-e6-96-87-e4-bb-b6-e6-8c-89-e9-92-ae-e5-b9-b6ajax-e4-b8-8a-e4-bc-a0-e6-96-87-e4-bb-b6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="笔记">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/05/e7-be-8e-e5-8c-96-e4-b8-8a-e4-bc-a0-e6-96-87-e4-bb-b6-e6-8c-89-e9-92-ae-e5-b9-b6ajax-e4-b8-8a-e4-bc-a0-e6-96-87-e4-bb-b6/" itemprop="url">美化上传文件按钮并ajax上传文件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-05T22:00:00+08:00">
-                2017-06-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>前端美化上传文件按钮主要使用css display</p>
-<pre><code>&amp;lt;input type=&quot;button&quot; onclick=&quot;upfile.click()&quot; class=&quot;&quot;&amp;gt;
-&amp;lt;form id=&quot;uploadForm&quot;&amp;gt; &amp;lt;input id=&quot;upfile&quot; onchange=&quot;uploadFile()&quot; style=&quot;display: none;&quot; name=&quot;file&quot; type=&quot;file&quot; value=&quot;&quot; /&amp;gt; &amp;lt;/form&amp;gt;`&lt;/pre&gt;
-
-* * *
-
-ajax上传文件主要使用FormData以及JQuery 2.0以上版本。
-
-&lt;pre&gt;`function uploadFile() {
-    var files = $(&quot;#upfile&quot;);
-    var name = files.val();
-    if(name!=&quot;&quot;){
-        var formData = new FormData($(&apos;#uploadForm&apos;)[0]);
-        $.ajax({
-            url : &apos;update&apos;,
-            type : &apos;POST&apos;,
-            data : formData,
-            async: false,
-            cache: false,
-            contentType: false,
-            processData: false,
-            error: function(request) {
-                dialog.error(&quot;Connection error&quot;);
-            },
-            success: function(data) {
-                //ajaxdata
-            }
-        })
-    }
-
-}
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://gsangu.github.io/2017/06/05/thinkphp-e4-b8-ad-e7-9a-84-e6-95-b0-e6-8d-ae-e5-ba-93-e6-93-8d-e4-bd-9c-e5-b8-b8-e8-a7-81-e9-97-ae-e9-a2-98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1754,6 +1402,302 @@ ajax上传文件主要使用FormData以及JQuery 2.0以上版本。
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gsangu.github.io/2016/10/20/2-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/20/2-2/" itemprop="url">利用Bass音频库制作+音乐网站API制作的播放器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-20T22:34:07+08:00">
+                2016-10-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C#</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>1.使用Bass 音频库，功能强大，支持几乎所有音频的解码编码等处理。以及强大的扩展功能！同时支持播放MP3，AAC、MP4/M4R、WMA、WAV、APE、OGG、FLA、FLAC等音频文件<br>2.使用CSkin WinForm界面库美化界面<br>3.使用各种音乐搜索API 功能<br>本播放器主要功能：<br>1.搜索功能：<br>可以按回车显示结果，结果显示需要等待。双击可播放，右击可以选择播放和下载<br>滚动条如果可以滚动，滚动到下面会自动加载之后的歌曲。</p>
+<p>2.歌词：<br>可以显示歌词还有图片，并且可以自动搜索歌词显示<br>也可以自己搜索歌词和换歌词，滚动显示歌词<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/10/20/2-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gsangu.github.io/2016/10/20/1-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/20/1-2/" itemprop="url">酷狗音乐API接口</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-20T22:04:17+08:00">
+                2016-10-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>本版本api是手机版本8352，<br><strong>1.搜索</strong><br>搜索歌曲：<br><a href="http://mobilecdn.kugou.com/api/v3/search/song?format=json&amp;keyword={关键字}&amp;page={页数}&amp;pagesize={单页数量}" target="_blank" rel="external">http://mobilecdn.kugou.com/api/v3/search/song?format=json&amp;keyword={关键字}&amp;page={页数}&amp;pagesize={单页数量}</a><br>电脑版：<br><a href="http://songsearch.kugou.com/song_search_v2?keyword=关键字&amp;page=1&amp;pagesize=80&amp;filter=0&amp;bitrate=0&amp;isfuzzy=0&amp;tag=em&amp;inputtype=2&amp;platform=PcFilter&amp;userid=785408929&amp;clientver=8063&amp;iscorrection=3" target="_blank" rel="external">http://songsearch.kugou.com/song_search_v2?keyword=关键字&amp;page=1&amp;pagesize=80&amp;filter=0&amp;bitrate=0&amp;isfuzzy=0&amp;tag=em&amp;inputtype=2&amp;platform=PcFilter&amp;userid=785408929&amp;clientver=8063&amp;iscorrection=3</a></p>
+<p>歌单搜索：<br><a href="http://mobilecdn.kugou.com/api/v3/search/special?page={页数}&amp;pagesize={单页数量}&amp;keyword={关键字}" target="_blank" rel="external">http://mobilecdn.kugou.com/api/v3/search/special?page={页数}&amp;pagesize={单页数量}&amp;keyword={关键字}</a></p>
+<p>专辑搜索：<br><a href="http://mobilecdn.kugou.com/api/v3/search/album?keyword={关键字}&amp;page={页数}&amp;pagesize={页数}" target="_blank" rel="external">http://mobilecdn.kugou.com/api/v3/search/album?keyword={关键字}&amp;page={页数}&amp;pagesize={页数}</a></p>
+<p>歌词搜索：<br><a href="http://lyrics.kugou.com/search?ver=1&amp;man=yes&amp;client=pc&amp;keyword={歌曲名}&amp;duration={歌曲总时长(毫秒)}&amp;hash=歌曲Hash值（可以不用）" target="_blank" rel="external">http://lyrics.kugou.com/search?ver=1&amp;man=yes&amp;client=pc&amp;keyword={歌曲名}&amp;duration={歌曲总时长(毫秒)}&amp;hash=歌曲Hash值（可以不用）</a></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/10/20/1-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1803,7 +1747,7 @@ ajax上传文件主要使用FormData以及JQuery 2.0以上版本。
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
