@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="下载PHPExcel：到官网下载或者链接: https://pan.baidu.com/s/1i4HKWj7 密码: 7wr4 解压文件夹至ThinkPHP\Library\Org\Util目录下。 然后就可以进行读写操作了。 读取Excel：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ThinkPHP 操作Excel进行读写">
+<meta property="og:url" content="https://gsangu.github.io/2017/07/09/thinkphp-e6-93-8d-e4-bd-9cexcel-e8-bf-9b-e8-a1-8c-e8-af-bb-e5-86-99/index.html">
+<meta property="og:site_name" content="笔记">
+<meta property="og:description" content="下载PHPExcel：到官网下载或者链接: https://pan.baidu.com/s/1i4HKWj7 密码: 7wr4 解压文件夹至ThinkPHP\Library\Org\Util目录下。 然后就可以进行读写操作了。 读取Excel：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-09T06:39:27.653Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ThinkPHP 操作Excel进行读写">
+<meta name="twitter:description" content="下载PHPExcel：到官网下载或者链接: https://pan.baidu.com/s/1i4HKWj7 密码: 7wr4 解压文件夹至ThinkPHP\Library\Org\Util目录下。 然后就可以进行读写操作了。 读取Excel：">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://gsangu.github.io/2017/07/09/thinkphp-e6-93-8d-e4-bd-9cexcel-e8-bf-9b-e8-a1-8c-e8-af-bb-e5-86-99/"/>
+
+
+
+
+
+  <title>ThinkPHP 操作Excel进行读写 | 笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gsangu.github.io/2017/07/09/thinkphp-e6-93-8d-e4-bd-9cexcel-e8-bf-9b-e8-a1-8c-e8-af-bb-e5-86-99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ThinkPHP 操作Excel进行读写</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-09T21:16:40+08:00">
+                2017-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li>下载PHPExcel：到官网下载或者链接: <a href="https://pan.baidu.com/s/1i4HKWj7" target="_blank" rel="external">https://pan.baidu.com/s/1i4HKWj7</a> 密码: 7wr4</li>
+<li>解压文件夹至ThinkPHP\Library\Org\Util目录下。</li>
+<li>然后就可以进行读写操作了。</li>
+<li><p>读取Excel：</p>
+<a id="more"></a>
+<p>public function impExcel(){<br>//echo $_FILES[‘file’][‘name’];<br>if (!empty($_FILES)) {<br>header(“Content-Type:text/html;charset=utf-8”);<br>$upload = new \Think\Upload();// 实例化上传类<br>$upload-&gt;maxSize   =     3145728 ;// 设置附件上传大小<br>$upload-&gt;exts      =     array(‘xls’, ‘xlsx’);// 设置附件上传类<br>$upload-&gt;rootPath  =’./‘;<br>$upload-&gt;savePath  =      ‘./Public/upload/‘; // 设置附件上传目录<br>// 上传文件<br>$info   =   $upload-&gt;uploadOne($_FILES[‘file’]);<br>$filename = $info[‘savepath’].$info[‘savename’];<br>$exts = $info[‘ext’];<br>//print_r($info);exit;<br>if(!$info) {// 上传错误提示错误信息<br>$rets[‘info’] = $upload-&gt;getError();<br>$rets[‘status’] = 1;<br>$this-&gt;ajaxReturn($rets, ‘json’);<br>}else {<br>import(“Org.Util.PHPExcel”);<br>//创建PHPExcel对象，注意，不能少了\<br>$PHPExcel=new \PHPExcel();<br>//如果excel文件后缀名为.xls，导入这个类<br>if($exts == ‘xls’){<br>import(“Org.Util.PHPExcel.Reader.Excel5”);<br>$PHPReader=new \PHPExcel_Reader_Excel5();<br>}else if($exts == ‘xlsx’){<br>import(“Org.Util.PHPExcel.Reader.Excel2007”);<br>$PHPReader=new \PHPExcel_Reader_Excel2007();<br>}<br>//载入文件<br>$PHPExcel=$PHPReader-&gt;load($filename);<br>//获取表中的第一个工作表，如果要获取第二个，把0改为1，依次类推<br>$currentSheet=$PHPExcel-&gt;getSheet(0);<br>//获取总列数<br>$allColumn=$currentSheet-&gt;getHighestColumn();<br>//获取总行数<br>$allRow=$currentSheet-&gt;getHighestRow();<br>//循环获取表中的数据，$currentRow表示当前行，从哪行开始读取数据，索引值从0开始<br>$col = array();<br>$data = array();<br>for($currentRow=1;$currentRow&lt;=$allRow;$currentRow++){<br>//从哪列开始，A表示第一列<br>$i = 0;$row = array();<br>for($currentColumn=’A’;$currentColumn&lt;=$allColumn;$currentColumn++){<br>//数据坐标<br>$address=$currentColumn.$currentRow;<br>//读取到的数据，保存到数组$arr中<br>$cell =$currentSheet-&gt;getCell($address)-&gt;getValue();<br>//$cell = $data[$currentRow][$currentColumn];<br>if($cell instanceof PHPExcel_RichText){<br>$cell  = $cell-&gt;__toString();<br>}<br>/<em> 列标题 </em>/<br>if($currentRow==1){<br>$col[$i++] = str_replace(‘_text’,’’,$cell._text);<br>}else{<br>$row[$col[$i++]] = str_replace(‘_text’,’’,$cell._text);<br>}<br>}</p>
+<p>$data[] = $row;</p>
+<p>}<br>dump($data);<br>unlink($filename);<br>rmdir(‘./Public/upload/‘.date(“Y-m-d”));//上传后删除<br>}<br>} else {<br>echo “上传文件错误！”;<br>}<br>}<br>`</p>
+</li>
+<li><p>写入Excel：<br><pre>`<br>import(“Org.Util.PHPExcel”);<br>//创建PHPExcel对象，注意，不能少了\<br>$PHPExcel=new \PHPExcel();<br>$objWriter = new \PHPExcel_Writer_Excel5($PHPExcel);<br>//接下来就是写数据到表格里面去<br>$list =你从数据库查出来的的数据<br> foreach ($list as $key =&gt; $value) {</pre></p>
+<pre><code>$i=$key+1;//表格是从1开始的
+$objPHPExcel-&amp;gt;getActiveSheet()-&amp;gt;setCellValue(&apos;A&apos;.$i,  $value[&apos;name&apos;]);//这里是设置A1单元格的内容
+$objPHPExcel-&amp;gt;getActiveSheet()-&amp;gt;setCellValue(&apos;B&apos;.$i,  $value[&apos;id&apos;]);////这里是设置B1单元格的内容
+//以此类推，可以设置C D E F G看你需要了。
+</code></pre><p>}<br>//接下来当然是下载这个表格了，在浏览器输出就好了</p>
+<pre><code>header(&quot;Pragma: public&quot;);
+header(&quot;Expires: 0&quot;);
+header(&quot;Cache-Control:must-revalidate, post-check=0, pre-check=0&quot;);
+header(&quot;Content-Type:application/force-download&quot;);
+header(&quot;Content-Type:application/vnd.ms-execl&quot;);
+header(&quot;Content-Type:application/octet-stream&quot;);
+header(&quot;Content-Type:application/download&quot;);;
+header(&apos;Content-Disposition:attachment;filename=文件名称.xls&apos;);
+header(&quot;Content-Transfer-Encoding:binary&quot;);
+$objWriter-&amp;gt;save(&apos;文件名称.xls&apos;);
+$objWriter-&amp;gt;save(&apos;php://output&apos;);
+</code></pre><p>到这里你就已经完成了。如果有哪里不懂可以留言</p>
+<p> 上面只是完成了流程而已。但是不可能这样简单而已。我们可以设置很多东西。看自己需要来设置了。</p>
+<p>设置excel的属性：<br>创建人<br>$objPHPExcel-&gt;getProperties()-&gt;setCreator(“Maarten Balliauw”);<br>最后修改人<br>$objPHPExcel-&gt;getProperties()-&gt;setLastModifiedBy(“Maarten Balliauw”);<br>标题<br>$objPHPExcel-&gt;getProperties()-&gt;setTitle(“Office 2007 XLSX Test Document”);<br>题目<br>$objPHPExcel-&gt;getProperties()-&gt;setSubject(“Office 2007 XLSX Test Document”);<br>描述<br>$objPHPExcel-&gt;getProperties()-&gt;setDescription(“Test document for Office 2007 XLSX, generated using PHP classes.”);<br>关键字<br>$objPHPExcel-&gt;getProperties()-&gt;setKeywords(“office 2007 openxml php”);<br>种类<br>$objPHPExcel-&gt;getProperties()-&gt;setCategory(“Test result file”);<br>设置当前的sheet<br>$objPHPExcel-&gt;setActiveSheetIndex(0);<br>设置sheet的name<br>$objPHPExcel-&gt;getActiveSheet()-&gt;setTitle(‘Simple’);<br>设置单元格的值<br>$objPHPExcel-&gt;getActiveSheet()-&gt;setCellValue(‘A1’, ‘String’);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;setCellValue(‘A2’, 12);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;setCellValue(‘A3’, true);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;setCellValue(‘C5’, ‘=SUM(C2:C4)’);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;setCellValue(‘B8’, ‘=MIN(B2:C5)’);<br>合并单元格<br>$objPHPExcel-&gt;getActiveSheet()-&gt;mergeCells(‘A18:E22’);<br>分离单元格<br>$objPHPExcel-&gt;getActiveSheet()-&gt;unmergeCells(‘A28:B28’);<br>保护cell<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getProtection()-&gt;setSheet(true); // Needs to be set to true in order to enable any worksheet protection!<br>$objPHPExcel-&gt;getActiveSheet()-&gt;protectCells(‘A3:E13’, ‘PHPExcel’);<br>设置格式<br>// Set cell number formats<br>echo date(‘H:i:s’) . “ Set cell number formats\n”;<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘E4’)-&gt;getNumberFormat()-&gt;setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_CURRENCY_EUR_SIMPLE);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;duplicateStyle( $objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘E4’), ‘E5:E13’ );<br>设置宽width<br>// Set column widths<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getColumnDimension(‘B’)-&gt;setAutoSize(true);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getColumnDimension(‘D’)-&gt;setWidth(12);<br>设置font<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘B1’)-&gt;getFont()-&gt;setName(‘Candara’);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘B1’)-&gt;getFont()-&gt;setSize(20);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘B1’)-&gt;getFont()-&gt;setBold(true);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘B1’)-&gt;getFont()-&gt;setUnderline(PHPExcel_Style_Font::UNDERLINE_SINGLE);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘B1’)-&gt;getFont()-&gt;getColor()-&gt;setARGB(PHPExcel_Style_Color::COLOR_WHITE);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘E1’)-&gt;getFont()-&gt;getColor()-&gt;setARGB(PHPExcel_Style_Color::COLOR_WHITE);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘D13’)-&gt;getFont()-&gt;setBold(true);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘E13’)-&gt;getFont()-&gt;setBold(true);<br>设置align<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘D11’)-&gt;getAlignment()-&gt;setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘D12’)-&gt;getAlignment()-&gt;setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘D13’)-&gt;getAlignment()-&gt;setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘A18’)-&gt;getAlignment()-&gt;setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_JUSTIFY);<br>//垂直居中<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘A18’)-&gt;getAlignment()-&gt;setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);<br>设置column的border<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘A4’)-&gt;getBorders()-&gt;getTop()-&gt;setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘B4’)-&gt;getBorders()-&gt;getTop()-&gt;setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘C4’)-&gt;getBorders()-&gt;getTop()-&gt;setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘D4’)-&gt;getBorders()-&gt;getTop()-&gt;setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘E4’)-&gt;getBorders()-&gt;getTop()-&gt;setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);<br>设置border的color<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘D13’)-&gt;getBorders()-&gt;getLeft()-&gt;getColor()-&gt;setARGB(‘FF993300’);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘D13’)-&gt;getBorders()-&gt;getTop()-&gt;getColor()-&gt;setARGB(‘FF993300’);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘D13’)-&gt;getBorders()-&gt;getBottom()-&gt;getColor()-&gt;setARGB(‘FF993300’);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘E13’)-&gt;getBorders()-&gt;getTop()-&gt;getColor()-&gt;setARGB(‘FF993300’);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘E13’)-&gt;getBorders()-&gt;getBottom()-&gt;getColor()-&gt;setARGB(‘FF993300’);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘E13’)-&gt;getBorders()-&gt;getRight()-&gt;getColor()-&gt;setARGB(‘FF993300’);<br>设置填充颜色<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘A1’)-&gt;getFill()-&gt;setFillType(PHPExcel_Style_Fill::FILL_SOLID);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘A1’)-&gt;getFill()-&gt;getStartColor()-&gt;setARGB(‘FF808080’);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘B1’)-&gt;getFill()-&gt;setFillType(PHPExcel_Style_Fill::FILL_SOLID);<br>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(‘B1’)-&gt;getFill()-&gt;getStartColor()-&gt;setARGB(‘FF808080’);<br>加图片<br>$objDrawing = new PHPExcel_Worksheet_Drawing();<br>$objDrawing-&gt;setName(‘Logo’);<br>$objDrawing-&gt;setDescription(‘Logo’);<br>$objDrawing-&gt;setPath(‘./images/officelogo.jpg’);<br>$objDrawing-&gt;setHeight(36);<br>$objDrawing-&gt;setWorksheet($objPHPExcel-&gt;getActiveSheet());<br>$objDrawing = new PHPExcel_Worksheet_Drawing();<br>$objDrawing-&gt;setName(‘Paid’);<br>$objDrawing-&gt;setDescription(‘Paid’);<br>$objDrawing-&gt;setPath(‘./images/paid.png’);<br>$objDrawing-&gt;setCoordinates(‘B15’);<br>$objDrawing-&gt;setOffsetX(110);<br>$objDrawing-&gt;setRotation(25);<br>$objDrawing-&gt;getShadow()-&gt;setVisible(true);<br>$objDrawing-&gt;getShadow()-&gt;setDirection(45);<br>$objDrawing-&gt;setWorksheet($objPHPExcel-&gt;getActiveSheet());<br>//处理中文输出问题<br>需要将字符串转化为UTF-8编码，才能正常输出，否则中文字符将输出为空白，如下处理：<br> $str  = iconv(‘gb2312’, ‘utf-8’, $str);<br>或者你可以写一个函数专门处理中文字符串：<br>function convertUTF8($str)<br>{<br>   if(empty($str)) return ‘’;<br>   return  iconv(‘gb2312’, ‘utf-8’, $str);<br>}</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/06/atom-e5-b8-b8-e7-94-a8-e6-8f-92-e4-bb-b6/" rel="next" title="Atom常用插件">
+                <i class="fa fa-chevron-left"></i> Atom常用插件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/18/e5-b0-81-e8-a3-85-e5-b8-b8-e7-94-a8-extend-e6-96-b9-e6-b3-95/" rel="prev" title="封装常用——$.extend()方法">
+                封装常用——$.extend()方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">John Doe</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
